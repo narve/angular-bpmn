@@ -35,13 +35,13 @@ const customModdle = {
 })
 export class AppComponent implements OnInit {
   title = 'Angular/BPMN';
-  viewer;
+  modeler;
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.viewer = new Modeler({
+    this.modeler = new Modeler({
       container: '#canvas',
       width: '100%',
       height: '600px',
@@ -79,9 +79,13 @@ export class AppComponent implements OnInit {
     }).subscribe(
         (x: any) => {
           console.log('Fetched XML, now importing: ', x);
-          this.viewer.importXML(x, this.handleError);
+          this.modeler.importXML(x, this.handleError);
         },
         this.handleError
       );
+  }
+
+  save(): void {
+    this.modeler.saveXML( (err: any, xml: any) => console.log( 'Result of saving XML: ', err, xml));
   }
 }
