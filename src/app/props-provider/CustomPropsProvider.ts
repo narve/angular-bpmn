@@ -1,10 +1,11 @@
-import * as EntryFactory from 'bpmn-js-properties-panel/lib/factory/EntryFactory';
+import {EntryFactory } from '../bpmn-js/bpmn-js';
 
+
+// Note that names of arguments must match injected modules, see InjectionNames.
 export function CustomPropsProvider( translate, bpmnPropertiesProvider) {
   this.getTabs = function(element) {
     console.log( this.constructor.name, 'Creating property tabs', element, bpmnPropertiesProvider);
-    const origTabs = bpmnPropertiesProvider.getTabs(element);
-    origTabs.push({
+    return bpmnPropertiesProvider.getTabs(element).concat({
       id: 'custom',
       label: translate('Custom'),
       groups: [
@@ -21,6 +22,5 @@ export function CustomPropsProvider( translate, bpmnPropertiesProvider) {
         }
       ]
     });
-    return origTabs;
   };
 }

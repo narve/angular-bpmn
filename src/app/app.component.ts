@@ -1,12 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BpmnModules} from "./di/di";
+import {Modeler, BpmnPropertiesProvider, PropertiesPanelModule, InjectionNames} from "./bpmn-js/bpmn-js";
 import {CustomPropsProvider} from './props-provider/CustomPropsProvider';
-
-import * as BpmnJS from 'bpmn-js/lib/Modeler.js';
-import * as PropertiesPanelModule from 'bpmn-js-properties-panel';
-import * as BpmnPropertiesProvider from 'bpmn-js-properties-panel/lib/provider/bpmn';
-
 
 @Component({
   selector: 'app-root',
@@ -15,13 +10,13 @@ import * as BpmnPropertiesProvider from 'bpmn-js-properties-panel/lib/provider/b
 })
 export class AppComponent implements OnInit {
   title = 'Angular/BPMN';
-  viewer: BpmnJS;
+  viewer;
 
   constructor(private http: HttpClient) {
   }
 
   ngOnInit(): void {
-    this.viewer = new BpmnJS({
+    this.viewer = new Modeler({
       container: '#canvas',
       width: '100%',
       height: '600px',
@@ -29,11 +24,11 @@ export class AppComponent implements OnInit {
         PropertiesPanelModule,
         // Re-use original bpmn-properties-module, see CustomPropsProvider for how it is used
         {
-          __init__: [BpmnModules.BpmnPropertiesProvider],
+          __init__: [InjectionNames.bpmnPropertiesProvider],
           bpmnPropertiesProvider: ['type', BpmnPropertiesProvider.propertiesProvider[1]]
         },
         {
-          __init__: [BpmnModules.propertiesProvider],
+          __init__: [InjectionNames.propertiesProvider],
           propertiesProvider: ['type', CustomPropsProvider]
         },
       ],
@@ -46,8 +41,6 @@ export class AppComponent implements OnInit {
   handleError(err: any) {
     if (err) {
       console.warn('Ups, error: ', err);
-    } else {
-      // Modify( CustomPropsProvider);
     }
   }
 
