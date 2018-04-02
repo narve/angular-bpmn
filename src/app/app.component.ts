@@ -47,15 +47,11 @@ export class AppComponent implements OnInit {
       height: '600px',
       additionalModules: [
         PropertiesPanelModule,
-        // Re-use original bpmn-properties-module, see CustomPropsProvider for how it is used
-        {
-          __init__: [InjectionNames.bpmnPropertiesProvider],
-          bpmnPropertiesProvider: ['type', BpmnPropertiesProvider.propertiesProvider[1]]
-        },
-        {
-          __init__: [InjectionNames.propertiesProvider],
-          propertiesProvider: ['type', CustomPropsProvider]
-        },
+
+        // Re-use original bpmn-properties-module, see CustomPropsProvider
+        {[InjectionNames.bpmnPropertiesProvider]: ['type', BpmnPropertiesProvider.propertiesProvider[1]]},
+        {[InjectionNames.propertiesProvider]: ['type', CustomPropsProvider]},
+
       ],
       propertiesPanel: {
         parent: '#properties'
@@ -77,15 +73,15 @@ export class AppComponent implements OnInit {
     this.http.get(url, {
       headers: {observe: 'response'}, responseType: 'text'
     }).subscribe(
-        (x: any) => {
-          console.log('Fetched XML, now importing: ', x);
-          this.modeler.importXML(x, this.handleError);
-        },
-        this.handleError
-      );
+      (x: any) => {
+        console.log('Fetched XML, now importing: ', x);
+        this.modeler.importXML(x, this.handleError);
+      },
+      this.handleError
+    );
   }
 
   save(): void {
-    this.modeler.saveXML( (err: any, xml: any) => console.log( 'Result of saving XML: ', err, xml));
+    this.modeler.saveXML((err: any, xml: any) => console.log('Result of saving XML: ', err, xml));
   }
 }
