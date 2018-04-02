@@ -3,6 +3,31 @@ import {HttpClient} from '@angular/common/http';
 import {Modeler, BpmnPropertiesProvider, PropertiesPanelModule, InjectionNames} from "./bpmn-js/bpmn-js";
 import {CustomPropsProvider} from './props-provider/CustomPropsProvider';
 
+const customModdle = {
+  name: "customModdle",
+  uri: "http://example.com/custom-moddle",
+  prefix: "custom",
+  xml: {
+    tagAlias: "lowerCase"
+  },
+  associations: [],
+  types: [
+    {
+      "name": "ExtUserTask",
+      "extends": [
+        "bpmn:UserTask"
+      ],
+      "properties": [
+        {
+          "name": "worklist",
+          "isAttr": true,
+          "type": "String"
+        }
+      ]
+    },
+  ]
+};
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -35,6 +60,9 @@ export class AppComponent implements OnInit {
       propertiesPanel: {
         parent: '#properties'
       },
+      moddleExtension: {
+        custom: customModdle
+      }
     });
   }
 
