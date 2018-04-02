@@ -1,4 +1,3 @@
-new proc-vis-web
+ng new proc-vis-web
 cd proc-vis-web/
 npm i --save bpmn-js bpmn-js-properties-panel
-
