@@ -5,11 +5,12 @@ start of a rewrite of my previous project integrating Angular2 with BPMN-JS: htt
 
 The previous project was created in an ancient period when Angular2 was still hot, 
 and suffered from several problems, 
-chief among them the complicated setup (lots of webpack configuration) and difficulty upgrading components.  
+chief among them the complicated setup (lots of webpack configuration) and difficulty of upgrading components.  
 
 This time around I wanted to use the Angular CLI and as many defaults, standards and conventions as possible. 
 
-NB: This project is not affiliated with / created by / endorsed by (etc) Camunda/BPMN.IO or anybody but myself.
+NB: This project is not affiliated with / created by / endorsed by (etc) Camunda/BPMN.IO or anybody but myself. 
+
 
 # Feedback
 
@@ -34,8 +35,13 @@ To run this project:
 Then look at http://localhost:4200
     
 
-# Features
- 
+# Features / Status
+
 - Angular CLI based project (see `docs` and `package.json` for exact versions).
 - Async loading of a sample BPMN diagram
 - Properties panel
+- Custom properties
+- Surprisingly little actual code
+- Hopefully usable as a template / inspiration for actual production use
+- Hopefully as future-proof as any front-end code can be these days
+ 

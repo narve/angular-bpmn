@@ -1,3 +1,9 @@
-ng new proc-vis-web
-cd proc-vis-web/
+ng new the-project
+cd the-project/
 npm i --save bpmn-js bpmn-js-properties-panel
+
+ng completion --bash >~/.ng-completion-rc
+source ~/.ng-completion-rc
+echo source ~/.ng-completion-rc >>~/.bashrc
+
+ng update
