@@ -1,0 +1,6 @@
+  652  cd ..
+  653  ng new proc-vis-web
+  654  cd proc-vis-web/
+  655  history
+  656  history|tail 6 >.history
+  657  history|tail -6 >.history
