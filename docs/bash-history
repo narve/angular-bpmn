@@ -7,3 +7,5 @@ source ~/.ng-completion-rc
 echo source ~/.ng-completion-rc >>~/.bashrc
 
 ng update
+
+npm i --save font-awesome

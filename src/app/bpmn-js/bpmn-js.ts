@@ -18,4 +18,12 @@ export const Modeler = _Modeler;
 export const PropertiesPanelModule = _PropertiesPanelModule;
 export const BpmnPropertiesProvider = _BpmnPropertiesProvider;
 export const EntryFactory = _EntryFactory;
-export const PaletteProvider = _PaletteProvider;
+export const OriginalPaletteProvider = _PaletteProvider;
+
+export interface PaletteProvider {
+  getPaletteEntries(): any;
+}
+
+export interface Palette {
+  registerProvider(provider: PaletteProvider): any;
+}

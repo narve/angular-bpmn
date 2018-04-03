@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Modeler, BpmnPropertiesProvider, PropertiesPanelModule, InjectionNames, PaletteProvider} from "./bpmn-js/bpmn-js";
+import {Modeler, BpmnPropertiesProvider, PropertiesPanelModule, InjectionNames, OriginalPaletteProvider} from "./bpmn-js/bpmn-js";
 import {CustomPropsProvider} from './props-provider/CustomPropsProvider';
 import {CustomPaletteProvider} from "./props-provider/CustomPaletteProvider";
 
@@ -32,7 +32,7 @@ const customModdle = {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
   title = 'Angular/BPMN';
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
         // Re-use original bpmn-properties-module, see CustomPropsProvider
         {[InjectionNames.bpmnPropertiesProvider]: ['type', BpmnPropertiesProvider.propertiesProvider[1]]},
         {[InjectionNames.propertiesProvider]: ['type', CustomPropsProvider]},
-        {[InjectionNames.originalPaletteProvider]: ['type', PaletteProvider]},
+        {[InjectionNames.originalPaletteProvider]: ['type', OriginalPaletteProvider]},
         {paletteProvider: ['type', CustomPaletteProvider]},
       ],
       propertiesPanel: {
