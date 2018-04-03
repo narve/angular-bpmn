@@ -45,7 +45,8 @@ Then look at http://localhost:4200
 
 - Async loading of a sample BPMN diagram
 - Properties panel
-- Custom properties
+- Custom properties (extending original)
+- Custom palette (extending original)
 
 - Surprisingly little actual code (including configuration files!)
 - Hopefully usable as a template / inspiration for actual production use

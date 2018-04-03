@@ -1,13 +1,13 @@
-import {Palette, PaletteProvider} from "../bpmn-js/bpmn-js";
+import {IPalette, IPaletteProvider} from "../bpmn-js/bpmn-js";
 
-export class CustomPaletteProvider implements PaletteProvider {
+export class CustomPaletteProvider implements IPaletteProvider {
 
   // Note that names of arguments must match injected modules, see InjectionNames.
   // I don't know why originalPaletteProvider matters but it breaks if it isn't there.
   // I guess since this component is injected, and it requires an instance of originalPaletteProvider,
   // originalPaletteProvider will be new'ed and thus call palette.registerProvider for itself.
   // There probably is a better way.
-  constructor(private palette: Palette, private originalPaletteProvider: PaletteProvider) {
+  constructor(private palette: IPalette, private originalPaletteProvider: IPaletteProvider) {
     // console.log(this.constructor.name, "constructing", palette, originalPaletteProvider);
     palette.registerProvider(this);
   }

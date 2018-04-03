@@ -11,19 +11,24 @@ export const InjectionNames = {
   translate: 'translate',
   propertiesProvider: 'propertiesProvider',
   bpmnPropertiesProvider: 'bpmnPropertiesProvider',
+  paletteProvider: 'paletteProvider',
   originalPaletteProvider: 'originalPaletteProvider',
 };
 
 export const Modeler = _Modeler;
 export const PropertiesPanelModule = _PropertiesPanelModule;
-export const BpmnPropertiesProvider = _BpmnPropertiesProvider;
 export const EntryFactory = _EntryFactory;
 export const OriginalPaletteProvider = _PaletteProvider;
+export const OriginalPropertiesProvider = _BpmnPropertiesProvider;
 
-export interface PaletteProvider {
+export interface IPaletteProvider {
   getPaletteEntries(): any;
 }
 
-export interface Palette {
-  registerProvider(provider: PaletteProvider): any;
+export interface IPalette {
+  registerProvider(provider: IPaletteProvider): any;
+}
+
+export interface IPropertiesProvider {
+  getTabs(elemnt): any;
 }
