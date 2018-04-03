@@ -8,7 +8,7 @@ and suffered from several problems,
 chief among them the complicated setup (lots of webpack configuration) and difficulty of upgrading components.  
 
 This time around I wanted to use the Angular CLI and as many defaults, standards and conventions as possible. 
-The main objective is to have a simple, standardized solu tion, making it easy to maintain and 
+The main objective is to have a simple, standardized solution, making it easy to maintain and 
 upgrade the code. 
 
 NB: This project is not affiliated with / created by / endorsed by (etc) Camunda/BPMN.IO or anybody but myself. 
@@ -16,7 +16,8 @@ NB: This project is not affiliated with / created by / endorsed by (etc) Camunda
 
 # Feedback
 
-Feedback is welcome, as issues, pull requests, comments, whatever. 
+Feedback is welcome, as issues, pull requests, comments, whatever. Without feedback this project 
+will be left unmaintained. 
 
 
 # Documentation
@@ -34,7 +35,7 @@ To run this project:
     npm start 
     
 Then look at http://localhost:4200
-    
+
 
 # Features / Status
 
