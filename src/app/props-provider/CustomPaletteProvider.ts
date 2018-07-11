@@ -1,7 +1,8 @@
-import {IPalette, IPaletteProvider} from "../bpmn-js/bpmn-js";
+import {IPalette, IPaletteProvider, Providers} from "../bpmn-js/bpmn-js";
 
 export class CustomPaletteProvider implements IPaletteProvider {
 
+  static $inject = [Providers.palette, Providers.originalPaletteProvider];
   // Note that names of arguments must match injected modules, see InjectionNames.
   // I don't know why originalPaletteProvider matters but it breaks if it isn't there.
   // I guess since this component is injected, and it requires an instance of originalPaletteProvider,
