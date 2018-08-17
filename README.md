@@ -65,4 +65,4 @@ To run in prod-mode:
 
 # Known bugs / limitations
 
-- Currently prod-mode does not work. See https://github.com/narve/angular-bpmn/issues/6 for reasons and fix. 
+- Let me know :)  
