@@ -34,14 +34,24 @@ To run this project:
     npm install
     npm start 
     
-Then look at http://localhost:4200
+Then look at http://localhost:4200. 
 
+To run in prod-mode:
+
+    npx ng serve --prod 
+
+# Requirements / Tested on
+ 
+- Linux (Mint)
+- Windows (plain Powershell, not Git Bash) 
+- Linux-On-Windows (WSL)
+
+- npm v9.2.11 (probably works on other versions) 
 
 # Features / Status
 
 - Angular CLI based project (see `docs` and `package.json` for exact versions).
 - No installation / setup required, besides `node`/`npm`
-- Tested on Linux and Windows (plain Powershell, not Git Bash)
 
 - Async loading of a sample BPMN diagram
 - Properties panel
@@ -51,4 +61,8 @@ Then look at http://localhost:4200
 - Surprisingly little actual code (including configuration files!)
 - Hopefully usable as a template / inspiration for actual production use
 - Hopefully as future-proof as any front-end code can be these days
- 
+
+
+# Known bugs / limitations
+
+- Currently prod-mode does not work. See https://github.com/narve/angular-bpmn/issues/6 for reasons and fix. 
