@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Modeler, OriginalPropertiesProvider, PropertiesPanelModule, InjectionNames, OriginalPaletteProvider} from "./bpmn-js/bpmn-js";
+import { OriginalPropertiesProvider, PropertiesPanelModule, Providers, OriginalPaletteProvider} from "./bpmn-js/bpmn-js";
+import Modeler from 'bpmn-js/lib/Modeler.js';
 import {CustomPropsProvider} from './props-provider/CustomPropsProvider';
 import {CustomPaletteProvider} from "./props-provider/CustomPaletteProvider";
 
@@ -50,12 +51,12 @@ export class AppComponent implements OnInit {
         PropertiesPanelModule,
 
         // Re-use original bpmn-properties-module, see CustomPropsProvider
-        {[InjectionNames.bpmnPropertiesProvider]: ['type', OriginalPropertiesProvider.propertiesProvider[1]]},
-        {[InjectionNames.propertiesProvider]: ['type', CustomPropsProvider]},
+        {[Providers.bpmnPropertiesProvider]: ['type', OriginalPropertiesProvider.propertiesProvider[1]]},
+        {[Providers.propertiesProvider]: ['type', CustomPropsProvider]},
 
         // Re-use original palette, see CustomPaletteProvider
-        {[InjectionNames.originalPaletteProvider]: ['type', OriginalPaletteProvider]},
-        {[InjectionNames.paletteProvider]: ['type', CustomPaletteProvider]},
+        {[Providers.originalPaletteProvider]: ['type', OriginalPaletteProvider]},
+        {[Providers.paletteProvider]: ['type', CustomPaletteProvider]},
       ],
       propertiesPanel: {
         parent: '#properties'

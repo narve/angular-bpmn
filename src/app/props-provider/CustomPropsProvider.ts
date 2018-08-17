@@ -1,10 +1,10 @@
-import {EntryFactory, IPropertiesProvider} from '../bpmn-js/bpmn-js';
+import {EntryFactory, IPropertiesProvider, Providers} from '../bpmn-js/bpmn-js';
 
 export class CustomPropsProvider implements IPropertiesProvider {
 
-  static $inject = ['translate', 'bpmnPropertiesProvider'];
+  static $inject = [Providers.translate, Providers.bpmnPropertiesProvider];
 
-// Note that names of arguments must match injected modules, see InjectionNames.
+  // Note that names of arguments must match injected modules, see InjectionNames.
   constructor(private translate, private bpmnPropertiesProvider) {
   }
 
