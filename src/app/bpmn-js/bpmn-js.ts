@@ -4,6 +4,24 @@ import * as _BpmnPropertiesProvider from 'bpmn-js-properties-panel/lib/provider/
 import * as _EntryFactory from 'bpmn-js-properties-panel/lib/factory/EntryFactory';
 import _PaletteProvider from 'bpmn-js/lib/features/palette/PaletteProvider';
 
+export const Modeler = _Modeler;
+export const PropertiesPanelModule = _PropertiesPanelModule;
+export const EntryFactory = _EntryFactory;
+export const OriginalPaletteProvider = _PaletteProvider;
+export const OriginalPropertiesProvider = _BpmnPropertiesProvider;
+
+export interface IPaletteProvider {
+  getPaletteEntries(): any;
+}
+
+export interface IPalette {
+  registerProvider(provider: IPaletteProvider): any;
+}
+
+export interface IPropertiesProvider {
+  getTabs(elemnt): any;
+}
+
 export const Providers = {
   __init__: "__init__",
   __depends__: "__depends__",
@@ -121,21 +139,3 @@ export const Providers = {
   updateFlowNodeRefsBehavior: "updateFlowNodeRefsBehavior",
   zoomScroll: "zoomScroll",
 };
-
-export const Modeler = _Modeler;
-export const PropertiesPanelModule = _PropertiesPanelModule;
-export const EntryFactory = _EntryFactory;
-export const OriginalPaletteProvider = _PaletteProvider;
-export const OriginalPropertiesProvider = _BpmnPropertiesProvider;
-
-export interface IPaletteProvider {
-  getPaletteEntries(): any;
-}
-
-export interface IPalette {
-  registerProvider(provider: IPaletteProvider): any;
-}
-
-export interface IPropertiesProvider {
-  getTabs(elemnt): any;
-}
