@@ -1,11 +1,13 @@
 # Angular BPMN Sample project
 
-This is a simple project demonstrating how to integrate Angular (5) with the BPMN-JS components. It is the 
-start of a rewrite of my previous project integrating Angular2 with BPMN-JS: https://github.com/narve/ang2-bpmnjs 
+This is a simple project demonstrating how to integrate Angular (~~5~~ ~~6~~ 7) with the 
+BPMN-JS components. It is the start of a rewrite of my previous project integrating 
+Angular2 with BPMN-JS: https://github.com/narve/ang2-bpmnjs.  
 
 The previous project was created in an ancient period when Angular2 was still hot, 
 and suffered from several problems, 
-chief among them the complicated setup (lots of webpack configuration) and difficulty of upgrading components.  
+chief among them the complicated setup (lots of webpack configuration) and difficulty 
+of upgrading components.  
 
 This time around I wanted to use the Angular CLI and as many defaults, standards and conventions as possible. 
 The main objective is to have a simple, standardized solution, making it easy to maintain and 
@@ -23,11 +25,11 @@ will be left unmaintained.
 # Documentation
 
 The documentation is kept to a bare minimum in order to avoid out-of-date information. 
-Especially Angular is a moving target. See the `docs` folder for the small amount of documentation there is. 
-Otherwise, consult the documentation for Typescript/Angular/AngularCLI/BPMN-JS. Remember to check that 
+Especially Angular is a moving target.  
+Consult the documentation for Typescript/Angular/AngularCLI/BPMN-JS. Remember to check that 
 you are viewing the correct version!
  
-To run this project: 
+To run this project with live-reload etc: 
  
     git clone git@github.com:narve/angular-bpmn.git
     cd angular-bpmn
@@ -36,9 +38,22 @@ To run this project:
     
 Then look at http://localhost:4200. 
 
+Or else, to run using plain http-server
+
+    npm run build
+    npx run http-server dist
+
+
+NB: The prod-mode is currently not working - it builds but fails at runtime. 
+
 To run in prod-mode:
 
-    npx ng serve --prod 
+    npm run start-prod
+    
+or
+
+    npm run build-prod
+    npx run http-server dist
 
 # Requirements / Tested on
  
