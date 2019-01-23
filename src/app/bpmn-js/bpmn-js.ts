@@ -1,4 +1,5 @@
-import _Modeler from 'bpmn-js/lib/Modeler.js';
+// import _Modeler from 'bpmn-js/lib/Modeler.js';
+import * as _Modeler from "bpmn-js/dist/bpmn-modeler.production.min.js";
 import * as _PropertiesPanelModule from 'bpmn-js-properties-panel';
 import * as _BpmnPropertiesProvider from 'bpmn-js-properties-panel/lib/provider/bpmn';
 import * as _EntryFactory from 'bpmn-js-properties-panel/lib/factory/EntryFactory';
