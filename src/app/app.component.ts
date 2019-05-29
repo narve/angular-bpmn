@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Modeler, OriginalPropertiesProvider, PropertiesPanelModule, InjectionNames, OriginalPaletteProvider} from "./bpmn-js/bpmn-js";
-import {CustomPropsProvider} from './props-provider/CustomPropsProvider';
-import {CustomPaletteProvider} from "./props-provider/CustomPaletteProvider";
+import { InjectionNames, Modeler, OriginalContextPadProvider, OriginalPaletteProvider, OriginalPropertiesProvider, PropertiesPanelModule } from './bpmn-js/bpmn-js';
+import { CustomPaletteProvider } from './props-provider/CustomPaletteProvider';
+import { CustomPropsProvider } from './props-provider/CustomPropsProvider';
+import { CustomContextPadProvider } from './props-provider/CustomContextPadProvider';
 
 const customModdle = {
   name: "customModdle",
@@ -56,6 +57,11 @@ export class AppComponent implements OnInit {
         // Re-use original palette, see CustomPaletteProvider
         {[InjectionNames.originalPaletteProvider]: ['type', OriginalPaletteProvider]},
         {[InjectionNames.paletteProvider]: ['type', CustomPaletteProvider]},
+        
+        // Re-use original contextpad, see CustomContextPadProvider
+        { [InjectionNames.originalContextPadProvider]: ['type', OriginalContextPadProvider] },
+        { [InjectionNames.contextPadProvider]: ['type', CustomContextPadProvider] },
+
       ],
       propertiesPanel: {
         parent: '#properties'
