@@ -1,5 +1,7 @@
 # Angular BPMN Sample project
 
+added context-pad support by timelot - rest is the same like forked.
+
 This is a simple project demonstrating how to integrate Angular (~~5~~ ~~6~~ 7) with the 
 BPMN-JS components. It is the start of a rewrite of my previous project integrating 
 Angular2 with BPMN-JS: https://github.com/narve/ang2-bpmnjs.  
