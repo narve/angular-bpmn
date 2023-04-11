@@ -1,3 +1,9 @@
+# NB / Warning
+
+I see that this project is still being forked and viewed. Please note that this repository is old, not updated, 
+and uses third-party libraries that has since been shown to have multiple vulernabilities. Do not use this code 
+except for inspiration and ideas. 
+
 # Angular BPMN Sample project
 
 This is a simple project demonstrating how to integrate Angular (~~5~~ ~~6~~ 7) with the 
